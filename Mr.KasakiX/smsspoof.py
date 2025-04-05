@@ -45,10 +45,7 @@ def main():
 
 {Y}TARGET NUMBER:{rc} """)
 
-    if number == "mine":
-        number = "9944014793"
-
-    elif number.isalpha() and not number == "mine":
+    if number.isalpha():
         print (f"{R}ERROR: WE ARE ASKING FOR PHONE NUMBER AND NOT LETTER.")
         time.sleep(1)
         main()
@@ -70,10 +67,7 @@ def main():
 
     fixed()
 
-    if number == "9944014793":
-        print (f"{B}TARGET NUMBER:{R} HIDDEN")
-    else:
-        print (f"{B}TARGET NUMBER:{rc} {number}")
+    print (f"{B}TARGET NUMBER:{rc} {number}")
 
     second = f"{B}>>> ENTER THE MESSAGE YOU WANT TO SEND TO YOUR TARGET: "
     for char in second:
@@ -82,10 +76,7 @@ def main():
         time.sleep(0.05)
     fixed()
 
-    if number == "9944014793":
-        print (f"{B}TARGET NUMBER:{R} HIDDEN")
-    else:
-        print (f"{B}TARGET NUMBER:{rc} {number}")
+    print (f"{B}TARGET NUMBER:{rc} {number}")
 
     message = input(f"""
 {B}>>> ENTER THE MESSAGE YOU WANT TO SEND TO YOUR TARGET:
@@ -96,10 +87,7 @@ def main():
 
     fixed()
 
-    if number == "9944014793":
-        print (f"{B}TARGET NUMBER:{R} HIDDEN")
-    else:
-        print (f"{B}TARGET NUMBER:{rc} {number}")
+    print (f"{B}TARGET NUMBER:{rc} {number}")
 
     print (f"""{B}MESSAGE:{rc}
 {message}""")
@@ -111,10 +99,7 @@ def main():
         time.sleep(0.05)
     fixed()
 
-    if number == "9944014793":
-        print (f"{B}TARGET NUMBER:{R} HIDDEN")
-    else:
-        print (f"{B}TARGET NUMBER:{rc} {number}")
+    print (f"{B}TARGET NUMBER:{rc} {number}")
 
     print (f"""{B}MESSAGE:{rc}
 {message}
@@ -129,10 +114,7 @@ def main():
 {Y}CODENAME:{rc} """)
     fixed()
 
-    if number == "9944014793":
-        print (f"{B}TARGET NUMBER:{R} HIDDEN")
-    else:
-        print (f"{B}TARGET NUMBER:{rc} {number}")
+    print (f"{B}TARGET NUMBER:{rc} {number}")
 
     print (f"""MESSAGE:
 {message}""")
@@ -146,10 +128,7 @@ def main():
         }
 
     try:
-        if number == "9944014793":
-            final = f"[*]SENDING MESSAGE TO THE HIDDEN NUMBER....\n"
-        else:
-            final = f"[*]SENDING MESSAGE TO THE NUMBER {number}....\n"
+        final = f"[*]SENDING MESSAGE TO THE NUMBER {number}....\n"
 
         for char in final:
             sys.stdout.write(char)
