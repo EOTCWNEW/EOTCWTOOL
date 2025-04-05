@@ -6,6 +6,7 @@ import zlib
 import marshal
 import pyarmor
 
+W = '\033[37m' #Information/About/Tuts
 R = '\033[31m' #Aggressive/Alert/Caution/Warning/Failed/
 B = '\033[34m' #Normal/Questioning/
 G = '\033[1;32m' #Process Completed/Success/
@@ -78,7 +79,7 @@ def main():
     time.sleep(0.05)
     print (f"""{B}
 
-    Choose Obfuscation Type:
+    Obfuscation Types:{W}
         1.  Compile.                                         
         2.  b85.                                             
         3.  b64.                                             
