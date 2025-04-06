@@ -48,6 +48,27 @@ maltextfilename = f'''
 • UnKware {R}[HIGHLY DESTRUCTIVE]{W}
 
 '''
+tools = f'''
+
+{B}[-------LIST OF HACKING TOOLS-------]{W}
+
+
+ {R}Red{rc} = Red Teaming Tools.
+ {B}Blue{rc} = Blue Teaming Tools.
+ {Y}Yellow{rc} = Tools for both teams.
+
+1: {Y}Converters{G} >>>{W} Tools used for conversion.
+2: {Y}Cryptography{G} >>>{W} Tools used for ciphering and deciphering.
+3: {R}DDOS{G} >>>{W} Distributed Denial Of Service tools.
+4: {R}Decrypters{G} >>>{W} Decrypting tools.
+5: {Y}Encrypters{G} >>>{W} Encrypting tools.
+6: {Y}Osint{G} >>>{W} Open Source INTelligence tools for info gathering.
+7: {R}Reconnaisance{G} >>>{W} Tools for gathering information of your target.
+8: {B}Scanners{G} >>>{W} Tools for scanning.
+9: {R}Social-Media{G} >>>{W} Social-Media Hacking and Osint tools.
+10: {Y}Steganography{G} >>>{W} Tools for extracting and hiding secrets in an image.
+
+'''
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -104,74 +125,136 @@ def progress_bar(color=colorama.Fore.BLUE):
     time.sleep(1)
 
 def main():
-    if name in ['UnK','UnKnown','3xp053','Mr.KasakiX']:
-        commandline = input(f'''{Y}┌─{OY}─{O}({W}{name}{DO}㉿{B}eye{RO})-{R}[FOUNDER]
+    try:
+        if name in ['UnK','UnKnown','3xp053','Mr.KasakiX']:
+            commandline = input(f'''{Y}┌─{OY}─{O}({W}{name}{DO}㉿{B}eye{RO})-{R}[FOUNDER]
 {Y}└{OY}─{O}${rc} ''')
-    elif name in ['H4SHP4P1','HASHPAPI','hashpapi','Hashpapi','h4shp4p1','H4shp4p1']:
-        commandline = input(f'''{Y}┌─{OY}─{O}({W}{name}{DO}㉿{B}eye{RO})-{R}[CO-FOUNDER]
+        elif name in ['H4SHP4P1','HASHPAPI','hashpapi','Hashpapi','h4shp4p1','H4shp4p1']:
+            commandline = input(f'''{Y}┌─{OY}─{O}({W}{name}{DO}㉿{B}eye{RO})-{R}[CO-FOUNDER]
 {Y}└{OY}─{O}${rc} ''')
-    else:
-        commandline = input(f'''{Y}┌─{OY}─{O}({W}{name}{DO}㉿{B}eye{RO})-{R}[<©>]
+        else:
+            commandline = input(f'''{Y}┌─{OY}─{O}({W}{name}{DO}㉿{B}eye{RO})-{R}[<©>]
 {Y}└{OY}─{O}${rc} ''')
-    if commandline == "help" or commandline == "HELP":
-        print (commands)
-        main()
-    elif commandline == "about":
-        os.system("cd && cd EOTCW && cat .about.txt")
-        main()
-    elif commandline == "chatroom":
-        print("coming soon!")
-        main()
-    elif commandline == "dox":
-        os.system("cd && cd EOTCW && chmod +x DOX && ./DOX")
-        main()
-    elif commandline == "exit":
-        message = f"{B}EOTCW AI[</>]: Thank you so much! see you again! bye!(◉⁠‿⁠◉)/\n{rc}"
-        for char in message:
+
+        #Main Commands.
+        if commandline == "help" or commandline == "HELP":
+            print (commands)
+            main()
+        elif commandline == "about":
+            os.system("cd && cd EOTCW && cat .about.txt")
+            main()
+        elif commandline == "chatroom":
+            print("coming soon!")
+            main()
+        elif commandline == "dox":
+            os.system("cd && cd EOTCW && chmod +x DOX && ./DOX")
+            main()
+        elif commandline == "exit":
+            message = f"{B}EOTCW AI[</>]: Thank you so much! see you again! bye!(◉⁠‿⁠◉)/\n{rc}"
+            for char in message:
+                sys.stdout.write(char)
+                sys.stdout.flush()
+                time.sleep(0.05)
+            time.sleep(1)
+            print(f"{R}exiting..... ")
+            time.sleep(2)
+            exit()
+        elif commandline == "hacked":
+            os.system("cd && cd EOTCW && chmod +x HACKED && ./HACKED")
+            main()
+        elif commandline == "learn":
+            os.system("cd && cd EOTCW/tuts && ls")
+            learnfile = input("pick a tutorial file to open and learn: ")
+            if "." not in learnfile:
+                print("ERROR: please add the file extension too!")
+            else:
+                os.system("cd && cd EOTCW/tuts && xdg-open {file}")
+            main()
+        elif commandline == "mal":
+            os.system("cd && cd EOTCW/Malwares && ls")
+            print(maltextfilename)
+            main()
+        elif commandline == "Mr.KasakiX":
+            os.system("cd && cd EOTCW/Mr.KasakiX && chmod +x START && ./START")
+            main()
+        elif commandline == "pics":
+            os.system("cd && cd EOTCW/pics && ls")
+            main()
+        elif commandline == "play":
+            os.system("cd && cd EOTCW/games && python game.py")
+            main()
+        elif commandline == "surf":
+            print("coming soon")
+            main()
+        elif commandline == "tools":
+            print(tools)
+            chosentool = input(f"{B}Pick a tool to use[1-10]:{rc} ")
+            if chosentool == "1":
+                converters()
+            elif chosentool == "2":
+                cryptography()
+            elif chosentool == "3":
+                ddos()
+            elif chosentool == "4":
+                decrypters()
+            elif chosentool == "5":
+                encrypters()
+            elif chosentool == "6":
+                osint()
+            elif chosentool == "7":
+                recons()
+            elif chosentool == "8":
+                scanners()
+            elif chosentool == "9":
+                socmed()
+            elif chosentool == "10":
+                steganography()
+            main()
+        elif commandline == "unkmode":
+            print("coming soon")
+            main()
+        else:
+            print("INVALID COMMAND! TYPE HELP TO SEE ALL COMMANDS!")
+            main()
+
+    except KeyboardInterrupt:
+        alertmsg = f"{R}ERROR: TYPE EXIT TO QUIT!"
+        for char in alertmsg:
             sys.stdout.write(char)
             sys.stdout.flush()
             time.sleep(0.05)
-        time.sleep(1)
-        print(f"{R}exiting..... ")
-        time.sleep(2)
-        exit()
-    elif commandline == "hacked":
-        os.system("cd && cd EOTCW && chmod +x HACKED && ./HACKED")
         main()
-    elif commandline == "learn":
-        os.system("cd && cd EOTCW/tuts && ls")
-        learnfile = input("pick a tutorial file to open and learn: ")
-        if "." not in learnfile:
-           print("ERROR: please add the file extension too!")
-           main()
-        else:
-           os.system("cd && cd EOTCW/tuts && xdg-open {file}")
-           main()
-    elif commandline == "mal":
-        os.system("cd && cd EOTCW/Malwares && ls")
-        print(maltextfilename)
-        main()
-    elif commandline == "Mr.KasakiX":
-        os.system("cd && cd EOTCW/Mr.KasakiX && chmod +x START && ./START")
-        main()
-    elif commandline == "pics":
-        os.system("cd && cd EOTCW/pics && ls")
-        main()
-    elif commandline == "play":
-        os.system("cd && cd EOTCW/games && python game.py")
-        main()
-    elif commandline == "surf":
-        print("coming soon")
-        main()
-    elif commandline == "tools":
-        print("currently in development")
-        main()
-    elif commandline == "unkmode":
-        print("coming soon")
-        main()
-    else:
-        print("INVALID COMMAND! TYPE HELP TO SEE ALL COMMANDS!")
-        main()
+
+#HACKING TOOLS.
+def converters():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def cryptography():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def ddos():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def decrypters():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def encrypters():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def osint():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def recons():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def scanners():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def socmed():
+    print(f"{R}UNDER DEVELOPMENT :)")
+
+def steganography():
+    print(f"{R}UNDER DEVELOPMENT :)")
 
 if __name__ == '__main__':
     name = input(f"""{B}EOTCW AI[</>]: Who are you?{rc}
