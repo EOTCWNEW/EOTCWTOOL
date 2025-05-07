@@ -118,6 +118,8 @@ def main(target, threads, time_limit, mode="GET", proxy_file="proxy.txt"):
                     thread = threading.Thread(target=attack, args=(target, proxy, mode))
                     thread.start()
 
+                    thread.join()
+
                 time.sleep(1)
 
             except KeyboardInterrupt:
