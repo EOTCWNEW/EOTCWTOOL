@@ -1,16 +1,62 @@
-from openai import OpenAI
+import os
+import requests
 
-client = OpenAI(
-  api_key="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"
-)
+url = "https://app.codeconvert.ai/api/convert-code"
 
-prompt = f"Convert this JavaScript code into Python"
-completion = client.chat.completions.create(
-  model="gpt-4o-mini",
-  store=True,
-  messages=[
-    {"role": "user", "content": prompt}
-  ]
-)
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-print(completion.choices[0].message);
+def banner():
+  print ("""
+
+ #####################################################
+ #                ##                ####   #####   ###
+ #############   #   ###########   ###   ######   ####
+ ############   #   ############   ##   ########   ###
+ ###########   #   #############   #   ########   ####
+ ####   ####   #   #####   ######      ######   ######
+ #####   ###   #       #   #######     ####   ########
+ #####   ##   ####   ##   ########    ###   ##########
+ ######   #   ###   ###                    ###########
+ #######      ##   ####   #############   ############
+ #########     #   #####   ############   ############
+ ##########       ######   ###########   #############
+ ###########     #######   ##########   ##############
+ ###########   ########   #########   ################
+ ########## #########   ########   ###################
+ #####################################################
+ #                                                   #
+ #              [( TOOL INFORMATION )]               #
+ #                                                   #
+ # AUTHOR:UnKnown                                    #
+ # TOOL_NAME: JSPY....                               #
+ # PURPOSE: CONVERTS JS CODE INTO PYTHON             #
+ #                                                   #
+ #####################################################
+
+""")
+
+def main():
+  conv = {
+    "inputLang":"JavaScript",
+    "outputLang":"Python",
+    "inputCode": jscode,
+    "customInstructions":"",
+    "isReferenceFilesEnabled":"false"
+  }
+  response = requests.post(url, json = conv)
+  print (response.text)
+
+if __name__ == '__main__':
+  clear()
+  banner()
+  filename = input("Place the pathfile of your jscode here: ")
+
+  if os.path.isfile(filename):
+    with open(filename, "rb") as jsfile:
+      jscode = jsfile.read().decode("utf-8")
+    main()
+
+  else:
+    print("[FATAL ERROR]: File not found! please check for typos.")
+    exit()

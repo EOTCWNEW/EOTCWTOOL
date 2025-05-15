@@ -4,7 +4,7 @@ import time
 import math
 import colorama
 
-members = ['UnK','Ps7ch0','Mr.KasakiX','UnKnown','3xp053','Ph.Kas','Code_3rr0r#502','1t4ch1','Gl1tch3d','PhantomX','Ph4nt0mX','phantomX','ph4nt0mX','Mr.Cl4y','Mr.Clay','mr.cl4y','mr.clay','Sh1su1','sh1su1','shisui','Shisui','SH1SU1','SHISUI']
+members = ['UnK','Ps7ch0','Mr.KasakiX','UnKnown','3xp053','Ph.Kas','Code_3rr0r#502','1t4ch1','Gl1tch3d','PhantomX','Ph4nt0mX','phantomX','ph4nt0mX','Mr.Cl4y','Mr.Clay','mr.cl4y','mr.clay','Sh1su1','sh1su1','shisui','Shisui','SH1SU1','SHISUI','Khaosphex','khaosphex','KHAOSPHEX']
 bbg = '\033[44m' #BLUE BACKGROUND
 W = '\033[37m' #Information/About/Tuts
 R = '\033[38;2;255;0;0m' #Aggressive/Alert/Caution/Warning/Failed/

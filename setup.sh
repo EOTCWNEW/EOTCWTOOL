@@ -25,6 +25,8 @@ echo -e "\e[38;5;201mInstaller Version 2.1.5\e[0m"
 echo " "
 echo " "
 
+source virtualenv/bin/activate
+
 pkg install python -y
 pkg install python3 -y
 pkg install golang -y
@@ -50,5 +52,13 @@ pip install ssl
 pip install http.client
 pip install threading
 pip install multiprocessing
+pip install pillow
+pip install geocoder
+pip install phonenumbers
+pip install exifread
+pip install pyarmor
+pip install bs4
+pip install openai
+pip install json
 npm fund
 npm install axios && socks-proxy-agent && https-proxy-agent && readline
